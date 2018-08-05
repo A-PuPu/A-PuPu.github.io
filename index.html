@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
         crossorigin="anonymous">
     <link href="path/to/lightbox.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/lightbox.css">
 
+    <link rel="Shortcut Icon" type="image/x-icon" href="img/favicon.ico" />
 
     <style>
         html,
@@ -190,7 +192,8 @@
             -webkit-align-items: center;
             align-items: center;
         }
-        .card-body h5{
+
+        .card-body h5 {
             padding-left: 35px;
             font-size: 16px;
         }
@@ -339,7 +342,10 @@
                 <div class="row">
                     <div class="col-6 col-md-3">
                         <div class="card">
-                            <img class="card-img-top" src="img/網站用圖/B-商品圖-01.jpg" alt="">
+
+                            <a href="img/網站用圖/B-商品圖-01-放大.png" data-lightbox="image-1" data-title="Optional caption.">
+                                <img class="card-img-top" src="img/網站用圖/B-商品圖-01.jpg" alt="">
+                            </a>
                             <div class="card-body">
                                 <h5 class="card-title">精緻造型餅乾</h5>
                             </div>
@@ -404,7 +410,36 @@
                     </div>
                 </div>
             </div>
-
+            <div id="lightbox" class="lightbox" style="top: 503.6px; left: 0px; display: none;">
+                <div id="lightboxOverlay" class="lightboxOverlay" style="width: 1519px; height: 5162px; display: none;"></div>
+                <div class="lb-outerContainer" style="width: 319px; height: 319px;">
+                    <div class="lb-container">
+                        <img class="lb-image" src="images/image-2.jpg" style="width: 319px; height: 319px;">
+                        <div class="lb-nav" style="">
+                            <a class="lb-prev" href="" style="display: none;"></a>
+                            <a class="lb-next" href="" style="display: none;"></a>
+                        </div>
+                        <div class="lb-loader" style="opacity: 3.4269e-05; display: none;">
+                            <a class="lb-cancel"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="lb-dataContainer" style="width: 319px;">
+                    <div class="lb-data">
+                        <div class="lb-details">
+                            <span class="lb-caption" style="">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">可選標題。</font>
+                                </font>
+                            </span>
+                            <span class="lb-number" style="display: none;"></span>
+                        </div>
+                        <div class="lb-closeContainer">
+                            <a class="lb-close"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </div>
@@ -594,7 +629,7 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
         crossorigin="anonymous"></script>
-    <script src="path/to/lightbox.js"></script>
+    <script src="js/lightbox-plus-jquery.min.js"></script>
 
 
     <script>
@@ -681,6 +716,10 @@
 
 
         });
+        lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true
+        })
     </script>
 </body>
 
